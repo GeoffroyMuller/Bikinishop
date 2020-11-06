@@ -1,31 +1,34 @@
 <template>
-
-  <ListeProduits :items="items.produits" :title="items.id_name" />
-
+  <div>
+    <ProductList :categorie="categorie"/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "idcategorie",
-      data() {
-        return {
-          categorie: [ ],
-        }
-      },
+  import ProductList from "../../components/ProductList";
 
-      mounted() {
-          this.loadCategorie();
-      },
+  export default {
+    name: "idcategorie",
+    data() {
+      return {
+        categorie: [],
+      }
+    },
 
-      methods: {
-        async loadCategorie(){
-          const data = await this.$providerCategories.getById(this.$route.params.id);
-          this.categorie = data.data;
-        }
-      },
+    mounted() {
+      this.loadCategorie();
+    },
+
+    methods: {
+      async loadCategorie() {
+        const data = await this.$providerCategories.getById(this.$route.params.id);
+        this.categorie = data.data;
+        console.log(this.categorie.produits);
+      }
+    },
+
+    components: {
+      ProductList,
     }
+  }
 </script>
-
-<style scoped>
-
-</style>

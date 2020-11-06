@@ -1,18 +1,13 @@
 <template>
-  <Layout :show-logo="false">
-    <br/>
-    <div class="container">
-      <h4 class="subtitle is-3">{{this.title}}</h4>
-      <br/>
-      <div class="columns is-mobile is-multiline is-left">
-
-        <div class="column is-narrow" style="width: 275px; " v-for="(product, key) of products"
-             :key="key">
-          <ProductCard :currentProduct="product"/>
+  <div>
+    <div class="columns is-gapless is-multiline is-mobile is-left">
+      <div v-for="product in this.categorie.produits">
+        <div class="column is-narrow" style="width: 17em">
+          <ProductCard :product="product"/>
         </div>
       </div>
     </div>
-  </Layout>
+  </div>
 </template>
 
 <script>
@@ -20,7 +15,7 @@
 
   export default {
     name: "ProductList",
-    props: ['products', 'title'],
+    props: ['categorie'],
     components: {
       ProductCard,
     },
