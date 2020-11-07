@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ProductList :categorie="categorie"/>
+    <ProductList :categorie="categorie" :productlength="productlenght"/>
   </div>
 </template>
 
@@ -12,6 +12,7 @@
     data() {
       return {
         categorie: [],
+        productlenght: '',
       }
     },
 
@@ -23,7 +24,7 @@
       async loadCategorie() {
         const data = await this.$providerCategories.getById(this.$route.params.id);
         this.categorie = data.data;
-        console.log(this.categorie.produits);
+        this.productlenght = data.data.produits.length;
       }
     },
 

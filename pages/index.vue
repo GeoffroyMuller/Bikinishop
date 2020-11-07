@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <div class="content is-medium">
     <div class="columns is-mobile">
       <card
         title="Free"
@@ -37,7 +37,7 @@
         No other internal dependency
       </card>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
