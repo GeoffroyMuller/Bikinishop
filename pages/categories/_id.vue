@@ -1,5 +1,12 @@
 <template>
   <div>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="#">Femme</a></li>
+        <li><a href="#">Maillots</a></li>
+        <li><a href="#">1 pièce</a></li>
+      </ul>
+    </nav>
     <ProductList :categorie="categorie" :productlength="productlenght"/>
   </div>
 </template>
