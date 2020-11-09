@@ -3,7 +3,7 @@
     <nav class="navbar is-fixed-top " role="navigation" aria-label="main navigation">
       <ul>
         <li>
-          <div class="navbarlogo navbar-brand">
+          <nav class="navbarlogo navbar-brand">
             <a class="navbar-item " href="/">
               <h1 class="loofstyle">bikinishop.</h1>
             </a>
@@ -12,63 +12,48 @@
               <span/>
               <span/>
             </div>
-          </div>
+          </nav>
         </li>
         <li>
-          <div class="navbarsearch">
+          <nav class="navbarsearch">
 
-            <a class="navbar-item " href="/">Test</a>
-            <div class="drop-padding navbar-item is-hoverable">
-              <a class="navbar-item">
-                More
-              </a>
-
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
-            <!---->
-            <div class="dropdown is-hoverable" style="position: inherit">
-              <div class="dropdown-trigger">
-                <a class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span>Dropdown</span>
-                </a>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu" role="menu" style="width: 100%">
-                <div class="dropdown-content" style="width: 100%">
-                  <a href="#" class="dropdown-item">
-                    Dropdown
-                  </a>
-                  <a class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <a href="#" class="dropdown-item is-active">
-                    Active dropdown item
-                  </a>
-                  <a href="#" class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <hr class="dropdown-divider">
-                  <a href="#" class="dropdown-item">
-                    With a divider
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!---->
-
+            <ul>
+              <li><a href="/">TEST1</a>
+                <ul class="submenu">
+                  <li><a href="#">T1Categ 1</a>
+                    <ul>
+                      <li><a href="#">T1C1 s1</a></li>
+                      <li><a href="#">T1C1 s2</a></li>
+                      <li><a href="#">T1C1 s3</a></li>
+                      <li><a href="#">T1C1 s4</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">T1Categ 2</a>
+                    <ul>
+                      <li><a href="#">T1C1 s1</a></li>
+                      <li><a href="#">T1C1 s2</a></li>
+                      <li><a href="#">T1C1 s3</a></li>
+                      <li><a href="#">T1C1 s4</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">T1Categ 3</a></li>
+                  <li><a href="#">T1Categ 4</a></li>
+                </ul>
+              </li>
+              <li><a href="/">TEST2</a>
+                <ul class="submenu">
+                  <li><a href="#">T2Categ 1</a></li>
+                  <li><a href="#">T2Categ 2</a></li>
+                  <li><a href="#">T2Categ 3</a></li>
+                </ul></li>
+              <li><a href="/">TEST3</a>
+                <ul class="submenu">
+                  <li><a href="#">T3Categ 1</a></li>
+                  <li><a href="#">T3Categ 2</a></li>
+                </ul>
+              </li>
+              <li><a href="/">TEST4</a></li>
+            </ul>
 
             <div
               v-for="(item, key) of items"
@@ -82,7 +67,7 @@
               </nuxt-link>
             </div>
 
-          </div>
+          </nav>
         </li>
       </ul>
     </nav>
@@ -160,6 +145,19 @@
   }
 </script>
 <style lang="scss">
+
+  .border-gradient {
+    border-bottom: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #dc93c4 0%, #b99dd2 25%, #9cdbeb 100%);
+  }
+
+  .loofstyle {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
   .navbar {
     display: flex;
     align-items: center;
@@ -186,16 +184,48 @@
       font-weight: bold;
       text-transform: uppercase;
     }
+
+    li:hover {
+      .submenu {
+        display: inline-block;
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        padding: 0px;
+        z-index: 1000;
+      }
+    }
+
+    & > ul {
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      justify-content: center;
+      & > li {
+        padding: 7px 10px 7px 10px;
+      }
+      & > li:hover{
+        background-color: #ffffff;
+        & > a {
+          color: #7957d5;
+        }
+      }
+    }
+
   }
 
-  .drop-padding {
-    padding: 0px;
+  .submenu{
+    display: none;
+    width: 100%;
+    background-color: white;
+    @extend .border-gradient;
+    li {
+      a {
+        padding: 15px;
+        font-size: 13px;
+        color: darkblue;
+      }
+    }
   }
 
-  .loofstyle {
-    font-size: xx-large;
-    font-weight: bold;
-    color: #ffffff;
-
-  }
 </style>
