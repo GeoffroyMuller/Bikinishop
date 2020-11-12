@@ -9,12 +9,14 @@
     "generate": "nuxt-ts generate"
   },
   "dependencies": {
+    "@mdi/js": "^5.8.55",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
-    "nuxt-buefy": "^0.4.3"
+    "nuxt-buefy": "^0.4.3",
+    "vue-material-design-icons": "^4.11.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",

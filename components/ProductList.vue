@@ -9,14 +9,13 @@
     </div>-->
     <div class="container">
       <div class="section p-0">
-        <div class="row columns is-multiline" style="display: -webkit-inline-flex">
+        <div class="row columns is-multiline" style="display: -webkit-inline-flex; justify-content: center">
 
 
-          <div v-if="productlength==1" class="column is-7 is-6-mobile">
+          <div v-if="productlength==1" class="column is-7 is-4-mobile">
             <ProductCard :product="this.categorie.produits[0]"/>
           </div>
-
-          <div v-else class="column is-3 is-5-mobile is-4-tablet is-3-desktop"
+          <div v-else class="column is-3 is-5-mobile is-4-tablet is-3-desktop is-3-fullhd"
                v-for="product in this.categorie.produits">
               <ProductCard :product="product"/>
           </div>
